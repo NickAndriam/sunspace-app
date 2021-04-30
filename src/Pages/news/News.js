@@ -25,14 +25,14 @@ export const NewsDetail = () => {
                         </div>
                         <div style={{ width: 380, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
                             <h3 style={{ color: '#8E9108' }}>Greenhouse will save lives!</h3>
-                            <p style={{ color: '#6E6E6E', fontSize: 14 }}>Sed porttitor lectus nibh. Vestibulum ante ipsum
+                            <p className="news_desc_txt">Sed porttitor lectus nibh. Vestibulum ante ipsum
                             orci luctus et ultrices posuere cubilia Curae;
                             Donec velit neque, auctor sit amet aliquam vel,
                             ullamcorper sit amet ligula.
                             Curabitur aliquet quam id dui posuere blandit.
                             Curabitur aliquet quam id dui posuere blandit.
 Vivamus suscipit tortor eget felis porttitor volutpat.</p>
-                            <p style={{ color: '#6E6E6E', fontSize: 14 }}>Sed porttitor lectus nibh. Vestibulum ante ipsum
+                            <p className="news_desc_txt">Sed porttitor lectus nibh. Vestibulum ante ipsum
                             orci luctus et ultrices posuere cubilia Curae;
                             Donec velit neque, auctor sit amet aliquam vel,
                             ullamcorper sit amet ligula.
@@ -41,7 +41,22 @@ Vivamus suscipit tortor eget felis porttitor volutpat.</p>
 Vivamus suscipit tortor eget felis porttitor volutpat.</p>
                         </div>
                     </div>
-                    <div>test</div>
+                    <div className="news_main_desc">
+                        <p className="news_desc_txt desc_width" >Sed porttitor lectus nibh. Vestibulum ante ipsum
+                        orci luctus et ultrices posuere cubilia Curae;
+                        Donec velit neque, auctor sit amet aliquam vel,
+                        ullamcorper sit amet ligula.
+                        Curabitur aliquet quam id dui posuere blandit.
+                        Curabitur aliquet quam id dui posuere blandit.
+Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                        <p className="news_desc_txt desc_width" >Sed porttitor lectus nibh. Vestibulum ante ipsum
+                        orci luctus et ultrices posuere cubilia Curae;
+                        Donec velit neque, auctor sit amet aliquam vel,
+                        ullamcorper sit amet ligula.
+                        Curabitur aliquet quam id dui posuere blandit.
+                        Curabitur aliquet quam id dui posuere blandit.
+Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                    </div>
                 </BottomContentHolder>
             </div>
 
@@ -50,7 +65,6 @@ Vivamus suscipit tortor eget felis porttitor volutpat.</p>
 }
 
 export default function News() {
-    let { url, path } = useParams()
     const NewsCard = () => {
         return (
             <>

@@ -54,3 +54,20 @@
   display: grid;
   align-self: center;
 }
+
+.news_main_desc {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.news_desc_txt {
+  color: #6e6e6e;
+  font-size: 14px;
+}
+
+.desc_width {
+  width: 62%;
+}
