@@ -13,13 +13,10 @@ import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import BottomSVG from './Components/BottomSVG/BottomSVG';
 
-import Home from './Pages/home/Home';
-import About from './Pages/about/About';
-import Gallery from './Pages/gallery/Gallery';
-import News from './Pages/news/News';
-import { data } from './data/data'
-import FullImage from './Components/FullImage/FullImage'
-import { GalleryRoutes, NewsRoutes, AboutRoutes } from './Routes/'
+import Home from './Pages/home/Home'
+import Gallery from './Pages/gallery/Gallery'
+import About from './Pages/about/About'
+import News from './Pages/news/News'
 
 function App() {
   const { home } = useSelector(state => state.navigation)
@@ -31,21 +28,19 @@ function App() {
           render={({ location }) => (
             <AnimatePresence initial={false}>
               <Switch location={location} key={location.pathname} >
-                <Route
-                  exact
-                  path="/"
-                  component={Home}
-                />
-                {AboutRoutes}
-                {NewsRoutes}
-                {GalleryRoutes}
+                <Route path='/about' component={About} />
+                <Route path='/news' component={News} />
+                <Route path='/gallery' component={Gallery} />
+                <Route path='/' component={Home} />
+                <Route path="*">
+                  <p>Not found</p>
+                </Route>
               </Switch>
             </AnimatePresence>
           )}
         />
         <Header />
         <BottomSVG />
-        {/* <Footer data={newData[0].name} /> */}
         <Footer />
       </Router>
     </>

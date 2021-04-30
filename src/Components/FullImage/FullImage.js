@@ -6,9 +6,9 @@ import large from '../../Assets/bg/large.jpg'
 
 function FullImage() {
     const fullImageVariants = {
-        initial: { opacity: 0, x: '100%' },
-        animate: { scale: 1, x: '0%', opacity: 1, transition: { duration: 0.4 } },
-        exit: { scale: 1, opacity: 1, transition: { duration: 0.4 } }
+        initial: { scale: 0.3, y: '100%', opacity: 0, borderRadius: 50 },
+        animate: { scale: 1, y: '0%', opacity: 1, borderRadius: [200, 0], transition: { duration: 0.6 } },
+        exit: { scale: 0.3, y: '100%', opacity: 0, borderRadius: 50, transition: { duration: 0.4 } }
     }
     return (
         <motion.div

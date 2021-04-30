@@ -5,10 +5,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 90;
-  // overflow-y: scroll;
-  // overflow-x: hidden;
-  // background-color: $yellow;
+  z-index: 10;
 }
 
 .news_shape {
@@ -53,6 +50,9 @@
   background-size: contain;
   display: grid;
   align-self: center;
+  @media (max-width: 400px) {
+    border-radius: 0;
+  }
 }
 
 .news_main_desc {
@@ -70,4 +70,12 @@
 
 .desc_width {
   width: 62%;
+}
+
+.newsDetail_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }

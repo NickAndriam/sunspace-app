@@ -16,7 +16,7 @@ function ImageCard({ height = 340, width = 250, url }) {
     }
     return (
         <>
-            <Link to='gallery/image'>
+            <Link to='/gallery/preview'>
                 <m.img
                     src={url || image}
                     alt="image"

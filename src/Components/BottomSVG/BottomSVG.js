@@ -147,8 +147,6 @@ function BottomSVG(props, { duration = 0.38, path }) {
 
     }
 
-    console.log(pathname)
-
     return (
         <>
             {
