@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "m-l";
+  src: url("../fonts/Metropolis-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "m-el";
+  src: url("../fonts/Metropolis-ExtraLight.otf") format("opentype");
+}
+@font-face {
+  font-family: "m-b";
+  src: url("../fonts/Metropolis-ExtraBold.otf") format("opentype");
+}
+
+span,
+p {
+  font-family: m-el;
+  line-height: 20px;
+  margin: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+h2 {
+  font-family: m-b;
+  line-height: normal;
+  font-size: 35px;
+  color: white;
+}
+h3 {
+  font-family: m-b;
+  line-height: normal;
+  font-size: 22px;
+  color: #4bb18f;
+}
+
+$bold: m-b;
+
+@media only screen and (max-width: 768px) {
+  span,
+  p {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  span,
+  p {
+    font-size: 10px;
+  }
+}
+
+//colors
+$primary: white;
+$green: #4bb18f;
+$blue: #217aa5;
+$yellow: #979b03;
+$grey: #707070;

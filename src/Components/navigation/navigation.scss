@@ -1,0 +1,154 @@
+@import "../../variables/variable";
+
+@font-face {
+  font-family: "m-b";
+  src: url("../../fonts/Metropolis-ExtraBold.otf") format("opentype");
+}
+
+.navigation_main_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80vh;
+  width: 100%;
+  background-image: url("../../Assets/bg/large.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  @media (max-width: 768px) {
+    background-image: url("../../Assets/bg/mobile-sm.jpg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(71, 173, 192);
+  background: linear-gradient(
+    153deg,
+    rgba(71, 173, 192, 0.47522759103641454) 0%,
+    rgba(52, 172, 52, 0.6012780112044818) 100%
+  );
+}
+
+.nav_bar {
+  position: fixed;
+  bottom: 0;
+  right: 5%;
+  color: white;
+  width: 50%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 200;
+  // background-color: black;
+}
+.nav_text {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.nav_text_p {
+  border-radius: 30px;
+  // padding: 20px;
+  font-size: 13px;
+  scale: 0;
+}
+
+.nav_text_p:hover {
+  scale: 1.1;
+}
+.nav_text_bold {
+  border-radius: 30px;
+  font-size: 15px;
+  font-family: m-b;
+  text-align: center;
+  opacity: 0;
+  scale: 1;
+  animation: changetoBold 300ms;
+  transition: scale ease-in-out 1s;
+}
+
+@keyframes changetoBold {
+  0% {
+    opacity: 0;
+    scale: 1;
+    transition: scale ease-in-out 300ms;
+  }
+  50% {
+    opacity: 0.5;
+    scale: 1.5;
+    transition: scale ease-in-out 300ms;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    transition: scale ease-in-out 300ms;
+  }
+}
+.nav_underline_container {
+  position: fixed;
+  top: 7.8%;
+  right: 5%;
+  z-index: 100;
+  width: 50%;
+  height: 3px;
+}
+.nav_underline {
+  height: 100%;
+  width: 8%;
+  border-radius: 50px;
+}
+.bold {
+  font-family: m-b;
+  font-size: 20px;
+}
+
+.logo_container {
+  position: fixed;
+  top: 0;
+  left: 5%;
+  z-index: 100;
+  height: 120px;
+  width: 170px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 40px 40px;
+  box-shadow: rgba(0, 0, 0, 0.112) 0 3px 6px;
+  @media (max-width: 480px) {
+    height: 100px;
+    width: 130px;
+  }
+}
+
+.logo_image {
+  width: 120px;
+  border-radius: 20px;
+  @media (max-width: 480px) {
+    width: 100px;
+  }
+}
+
+.path_anime {
+  position: absolute;
+  bottom: 0;
+  fill: white;
+  z-index: 200;
+}

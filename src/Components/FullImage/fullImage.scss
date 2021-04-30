@@ -1,0 +1,11 @@
+.fullImage_container {
+  position: absolute;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  z-index: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
