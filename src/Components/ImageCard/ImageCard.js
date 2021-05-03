@@ -22,6 +22,7 @@ function ImageCard({ height = 340, width = 250, url }) {
                     alt="image"
                     className="imgCard"
                 />
+                {/* <div style={{ background: `url(${image})` }} className="imgCard" /> */}
             </Link>
         </>
     )

@@ -31,11 +31,11 @@ function AppCarousel({ children }) {
         <Carousel
             draggable={true}
             responsive={responsive}
-            infinite={true}
+            // infinite={true}
             // centerMode={true}
             containerClass="carousel-container"
-            itemClass="item_class_test"
-            sliderClass="slider_class_carousel"
+            itemClass="item_class_c"
+            sliderClass="slider_class_c"
             ssr={true}>
             {children}
         </Carousel>

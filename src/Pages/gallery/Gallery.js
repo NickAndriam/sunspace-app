@@ -45,6 +45,7 @@ export default function Gallery() {
                         <ImageCard />
                     </AppCarousel>
 
+                    <ImageCard />
                 </BottomContentHolder>
             </motion.div >
         )
