@@ -15,7 +15,15 @@ function About({ breakpoints, currentBreakpoint }) {
     const [showMap, setShowMap] = useState(false)
     const cb = breakpoints[currentBreakpoint];
 
-
+    useEffect(() => {
+        const scrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
+        scrollToTop()
+    }, [1])
 
 
     const AboutCard = () => {

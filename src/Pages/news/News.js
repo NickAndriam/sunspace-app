@@ -21,6 +21,15 @@ function News(props) {
         cb < 700 ? setMobile(true) : setMobile(false)
     }, [cb])
 
+    useEffect(() => {
+        const scrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
+        scrollToTop()
+    }, [1])
 
     const NewsCard = () => {
         return (

@@ -19,6 +19,7 @@ import About from './Pages/about/About'
 import News from './Pages/news/News'
 
 function App() {
+
   const { home } = useSelector(state => state.navigation)
   return (
     <>
