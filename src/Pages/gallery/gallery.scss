@@ -21,3 +21,17 @@
   position: absolute;
   top: 35%;
 }
+.gallery_content_container {
+  // background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.gallery_content_title {
+  font-size: 22px;
+  color: $blue;
+  align-self: flex-start;
+  padding-left: 10%;
+}

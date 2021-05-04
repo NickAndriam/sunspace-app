@@ -35,17 +35,27 @@ export default function Gallery() {
             >
                 <HeaderContent subtitle="Enjoy Our Gallery" y={-80} />
                 <BottomContentHolder y={-200} >
-                    <h2 className="gallery_content_title">Image from the field</h2>
-                    <AppCarousel>
-                        <ImageCard />
-                        <ImageCard />
-                        <ImageCard />
-                        <ImageCard />
-                        <ImageCard />
-                        <ImageCard />
-                    </AppCarousel>
+                    <div className="gallery_content_container">
+                        <h2 className="gallery_content_title">Image from the field</h2>
+                        <AppCarousel>
+                            <ImageCard />
+                            <ImageCard />
+                            <ImageCard />
+                            <ImageCard />
+                            <ImageCard />
+                            <ImageCard />
+                        </AppCarousel>
 
-                    <ImageCard />
+                        <h2 className="gallery_content_title">Image from the greenhouse</h2>
+                        <AppCarousel>
+                            <ImageCard />
+                            <ImageCard />
+                            <ImageCard />
+                            <ImageCard />
+                            <ImageCard />
+                            <ImageCard />
+                        </AppCarousel>
+                    </div>
                 </BottomContentHolder>
             </motion.div >
         )
