@@ -1,0 +1,50 @@
+@import "../variables/variable";
+.signIn_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  background-color: white;
+  overflow: hidden;
+  //   background-image: url("../Assets/bg/large.jpg");
+  background-size: cover;
+  font-family: m-el;
+}
+
+.svg_admin {
+  position: absolute;
+  right: 0;
+}
+
+.signin_content {
+  position: absolute;
+  //   background-color: blue;
+  width: 650px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signin_motto_container {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 450px;
+  height: 200px;
+}
+.signin_motto {
+  font-size: 40px;
+  line-height: 50px;
+  color: rgba(255, 255, 255, 0.529);
+}
+
+.signin_logo {
+  height: 150px;
+  margin-bottom: 80px;
+  margin-top: -40px;
+}

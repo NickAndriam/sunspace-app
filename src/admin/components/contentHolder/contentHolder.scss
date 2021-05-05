@@ -1,0 +1,24 @@
+.contentHolder_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.contentHolder_sides {
+  width: 90vw;
+  height: 90vh;
+  background-color: #f9f9f9;
+  border-radius: 40px;
+  overflow: hidden;
+  display: flex;
+}
+.content_content {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}

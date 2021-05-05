@@ -1,0 +1,17 @@
+.admin_appButton_container {
+  background-color: #4bb18f;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+}
+
+.admin_appButton_container:hover {
+  cursor: pointer;
+  background-color: #3b9779;
+}
+.admin_appButton_container:active {
+  background-color: #3b9779;
+  transform: scale(0.95);
+}

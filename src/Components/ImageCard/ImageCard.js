@@ -18,11 +18,6 @@ function ImageCard({ height = 340, width = 250, url, desc }) {
         <>
             <Link to='/gallery/preview/1' style={{ textDecoration: 'none' }}>
                 <div className="imageCard_container">
-                    {/* <m.img
-                        src={url || image}
-                        alt="image"
-                        className="imgCard"
-                    /> */}
                     <div style={{ backgroundImage: `url(${url || image}) ` }} className="imgCard">
                         <div className="image_ribbon">
                             <p style={{ fontSize: 12 }}>{desc || "Hello from the field"}</p>

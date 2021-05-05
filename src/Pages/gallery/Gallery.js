@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { motion } from 'framer-motion'
 import { Link, Route, useLocation } from 'react-router-dom'
+
 
 
 import BottomContentHolder from '../../Components/BottomContentHolder/BottomContentHolder'
@@ -16,7 +16,6 @@ export default function Gallery() {
 
     const location = useLocation()
     const url = location.pathname.split('/')
-    console.log(url)
 
     const galleryVariant = {
         initial: {},
@@ -51,7 +50,7 @@ export default function Gallery() {
                 <BottomContentHolder y={-200} >
                     <div className="gallery_content_container">
                         <div className="gallery_content_heading">
-                            <h2 className="gallery_content_title">Image from the field</h2>
+                            <h2 className="gallery_content_title" style={{ color: '#3885B1' }}>Image from the field</h2>
                             <Link to="/gallery/field" style={{ textDecoration: 'none' }}>
                                 <p className="gallery_content_seeAll" color="blue">See all</p>
                             </Link>
@@ -66,7 +65,7 @@ export default function Gallery() {
                         </AppCarousel>
 
                         <div className="gallery_content_heading">
-                            <h2 className="gallery_content_title">Image from the field</h2>
+                            <h2 className="gallery_content_title">Image from the greenhouse</h2>
                             <Link to="/gallery/field" style={{ textDecoration: 'none' }}>
                                 <p className="gallery_content_seeAll" color="blue">See all</p>
                             </Link>

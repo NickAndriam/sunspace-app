@@ -17,6 +17,7 @@ import Home from './Pages/home/Home'
 import Gallery from './Pages/gallery/Gallery'
 import About from './Pages/about/About'
 import News from './Pages/news/News'
+import SignIn from './admin/signIn'
 
 function App() {
 
@@ -32,7 +33,8 @@ function App() {
                 <Route path='/about' component={About} />
                 <Route path='/news' component={News} />
                 <Route path='/gallery' component={Gallery} />
-                <Route path='/' component={Home} />
+                <Route path='/admin' component={SignIn} />
+                <Route exact path='/' component={Home} />
                 <Route path="*">
                   <p>Not found</p>
                 </Route>

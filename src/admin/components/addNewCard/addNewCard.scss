@@ -1,0 +1,28 @@
+.addNewCard_container {
+  border: 2px dashed;
+  stroke-dasharray: 2px;
+  border-color: rgba(0, 0, 0, 0.153);
+  border-radius: 20px;
+  width: 140px;
+  height: 120px;
+  color: #e2e1e1;
+  margin: 5px 5px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addNewCard_container:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.153) 0 0 10px;
+}
+.addNewCard_container:active {
+  transform: scale(0.9);
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.153) 0 0 10px;
+}
+
+.plus_icon {
+  stroke-dasharray: 0px;
+}

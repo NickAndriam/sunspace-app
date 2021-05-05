@@ -1,0 +1,44 @@
+@import "../../../variables/variable";
+.navAdmin_container {
+  height: 100%;
+  width: 300px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.132) 1px 0 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.navAdmin_logo {
+  height: 60px;
+}
+
+.navAdmin_lists {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.navAdmin_list {
+  margin: 20px 0 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 200px;
+}
+
+.navAdmin_text {
+  text-decoration: none;
+  color: #aeaeae;
+  font-family: m-el;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.navAdmin_text_bold {
+  color: #4bb18f;
+  font-size: 18px;
+  text-decoration: none;
+  margin-left: 20px;
+}
