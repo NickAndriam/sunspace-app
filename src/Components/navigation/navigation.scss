@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  z-index: 100;
+  z-index: 800;
 }
 
 .bg-image {
@@ -54,7 +54,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 200;
+  z-index: 500;
   // background-color: black;
 }
 .nav_text {
@@ -123,7 +123,7 @@
   position: fixed;
   top: 0;
   left: 5%;
-  z-index: 100;
+  z-index: 800;
   height: 120px;
   width: 170px;
   background-color: white;

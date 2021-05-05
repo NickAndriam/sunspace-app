@@ -133,7 +133,7 @@ function Navigation(props, { color = "#4BB18F" }) {
                         </motion.div>
                         <motion.div
                             className="nav_bar"
-                            style={{ position: 'fixed', top: 0, zIndex: 400 }}>
+                            style={{ position: 'fixed', top: 0, zIndex: 800 }}>
                             {
                                 navList.map(e => (
                                     <Link to={e.to} className="nav_text" key={e.id}>
