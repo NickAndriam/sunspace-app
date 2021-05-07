@@ -14,15 +14,13 @@ const AppAdmin = () => {
     console.log(pathname)
     return (
         <>
-            { (pathname !== undefined) && (pathname !== '') ?
-                <ContentHolder>
-                    <Route exact path='/admin/home' component={Home} />
-                    <Route exact path='/admin/about' component={About} />
-                    <Route exact path='/admin/gallery' component={Gallery} />
-                    <Route exact path='/admin/news' component={News} />
-                </ContentHolder>
-                : ''
-            }
+
+            {/* <ContentHolder > */}
+            <Route exact path='/admin/home' component={Home} />
+            <Route exact path='/admin/about' component={About} />
+            <Route exact path='/admin/gallery' component={Gallery} />
+            <Route exact path='/admin/news' component={News} />
+            {/* </ContentHolder> */}
         </>
     )
 }

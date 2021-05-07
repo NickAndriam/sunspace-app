@@ -1,10 +1,14 @@
 .imageCard_container {
   margin: 5px;
-  width: 300px;
+  width: 280px;
   height: 200px;
   border-radius: 25px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.153) 0px 5px 5px;
+  @media (max-width: 1024px) {
+    width: 220px;
+    height: 140px;
+  }
 }
 
 .imgCard {

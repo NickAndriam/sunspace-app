@@ -10,29 +10,11 @@
   scroll-behavior: smooth;
 }
 
-.about_shape {
-  position: absolute;
-  top: 22%;
-}
-
-.about_content {
-  position: absolute;
-  top: 42%;
-  height: 200%;
-  width: 100vw;
-}
-.aboutCardHolder {
-  // background-color: black;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin-top: 35px;
-}
 .aboutCard_container {
-  width: 380px;
+  width: 340px;
+  text-align: center;
   @media (max-width: 730px) {
     width: 340px;
-    text-align: center;
   }
 }
 
@@ -44,7 +26,7 @@
   position: absolute;
   top: 43%;
   left: 50%;
-  width: 100vw;
+  width: 100%;
   z-index: 2;
 }
 .about_boutton_txt {

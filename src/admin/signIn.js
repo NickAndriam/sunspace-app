@@ -50,7 +50,9 @@ const SignIn = () => {
         <>
             <div className="signIn_container" style={{ backgroundImage: `url(${bg})` }}>
                 <div className="layer" />
-                <AppAdmin />
+                <ContentHolder>
+                    <AppAdmin />
+                </ContentHolder>
                 <Route exact path='/admin' component={SignInMain} />
             </div>
         </>

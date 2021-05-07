@@ -39,6 +39,8 @@ const AppCard = ({ buttonWidth = 100, cardWidth = 150, title = "Title", btnTitle
             <motion.div className="appCard_container"
                 onHoverStart={() => setShowIcon(true)}
                 onHoverEnd={() => setShowIcon(false)}
+                onClick={() => setShowIcon(!showIcon)}
+
                 animate={{ width: cardWidth, transition: { duration: 0.4 } }}
 
             >

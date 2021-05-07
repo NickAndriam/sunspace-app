@@ -43,7 +43,7 @@ function Header(props, { color = '#4BB18F', duration = 0.2, animate = false }) {
 
     const prevSVG = usePrev(pathsArrays[0].d[index])
     const interpolator = interpolate(prevSVG || pathsArrays[0].d[0], pathsArrays[0].d[index])
-    d3.select("#header_SVG").transition().duration(250).ease(d3.easeElasticInOut)
+    d3.select("#header_SVG").transition().duration(300).ease(d3.easeElasticInOut)
         .attrTween('d', () => { return interpolator })
 
     useEffect(() => {
@@ -51,7 +51,7 @@ function Header(props, { color = '#4BB18F', duration = 0.2, animate = false }) {
         pathname[1] === 'gallery' && setBg(colors[1])
         pathname[1] === 'news' && setBg(colors[2])
         pathname[1] !== '' ? setToggle(true) : setToggle(false)
-    }, [pathname])
+    }, [pathname[1]])
 
     useEffect(() => {
         if (cb <= mobile) {

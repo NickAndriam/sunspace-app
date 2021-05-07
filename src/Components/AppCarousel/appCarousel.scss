@@ -1,24 +1,12 @@
-.slider_class_c {
-  //   padding: 5px;
+.appCarousel_arrow {
+  background-color: white;
+  border: none;
+}
+.appCarousel_arrow:hover {
+  cursor: pointer;
 }
 
-.item_class_c {
-  width: 380px;
-  height: 220px;
-  margin: 5px;
-}
-
-.anothertest {
-  //   display: flex;
-  //   align-items: center;
-}
-
-.carousel-container {
-  width: 80%;
-  // margin: auto;
-  padding: 0px;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  margin-bottom: 40px;
+.appCarousel {
+  position: relative;
+  margin-bottom: 5%;
 }

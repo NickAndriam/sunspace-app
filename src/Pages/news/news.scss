@@ -6,6 +6,7 @@
   height: 100%;
   width: 100%;
   z-index: 10;
+  margin-bottom: 200px;
 }
 
 .news_shape {
@@ -34,10 +35,12 @@
 .newsCardDetail_container {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap-reverse;
   width: 80vw;
+  height: 400px;
   margin: auto;
+  margin-top: 30px;
   margin-bottom: 30px;
   // background-color: black;
 }
@@ -56,11 +59,12 @@
 }
 
 .news_main_desc {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 80px;
 }
 
 .news_desc_txt {

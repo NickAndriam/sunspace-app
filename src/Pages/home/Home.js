@@ -10,6 +10,7 @@ import innergy from '../../Assets/logo/innergy.png'
 import erasmus from '../../Assets/logo/erasmus.png'
 import iv from '../../Assets/logo/iv.jpg'
 import cmu from '../../Assets/logo/cmu.jpg'
+import AppCarousel from '../../Components/AppCarousel/AppCarousel'
 
 function Home({ breakpoints, currentBreakpoint }) {
     const cb = breakpoints[currentBreakpoint]
@@ -36,13 +37,15 @@ function Home({ breakpoints, currentBreakpoint }) {
                                 }
                             </div> :
                             <div className="sponsors_container">
-                                <Carousel navButtonsAlwaysInvisible="true" animation="slide" swipe={true} className="sponsors_carousel">
+                                {/* <Carousel navButtonsAlwaysInvisible="true" animation="slide" swipe={true} className="sponsors_carousel"> */}
+                                <AppCarousel autoPlay={true}>
                                     {
                                         sponsorList.map(e => (
                                             <img src={e.url} alt={e.name} id={e.id} height={e.size} key={e.id} />
                                         ))
                                     }
-                                </Carousel>
+                                </AppCarousel>
+                                {/* </Carousel> */}
                             </div>
                     }
                 </motion.div>

@@ -2,8 +2,6 @@ import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link, Route, useLocation } from 'react-router-dom'
 
-
-
 import BottomContentHolder from '../../Components/BottomContentHolder/BottomContentHolder'
 import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
 import './gallery.scss'
@@ -13,12 +11,11 @@ import FullImage from '../../Components/FullImage/FullImage'
 import AppCarousel from '../../Components/AppCarousel/AppCarousel';
 
 export default function Gallery() {
-
     const location = useLocation()
     const url = location.pathname.split('/')
 
+
     const galleryVariant = {
-        initial: {},
         animate: {
             opacity: 1,
             transition: {
@@ -38,11 +35,12 @@ export default function Gallery() {
         }
         scrollToTop()
     }, [1])
+
+
     const MainGallery = () => {
         return (
             <motion.div
-                variants={galleryVariant}
-                initial='initial'
+                // variants={galleryVariant}
                 animate='animate'
                 className="gallery_container"
             >
@@ -55,7 +53,7 @@ export default function Gallery() {
                                 <p className="gallery_content_seeAll" color="blue">See all</p>
                             </Link>
                         </div>
-                        <AppCarousel>
+                        <AppCarousel arrowColor="#2179a5ba">
                             <ImageCard />
                             <ImageCard />
                             <ImageCard />
@@ -65,12 +63,12 @@ export default function Gallery() {
                         </AppCarousel>
 
                         <div className="gallery_content_heading">
-                            <h2 className="gallery_content_title">Image from the greenhouse</h2>
+                            <h2 className="gallery_content_title" style={{ color: '#3885B1' }}>Image from the greenhouse</h2>
                             <Link to="/gallery/field" style={{ textDecoration: 'none' }}>
                                 <p className="gallery_content_seeAll" color="blue">See all</p>
                             </Link>
                         </div>
-                        <AppCarousel>
+                        <AppCarousel arrowColor="#2179a5ba">
                             <ImageCard />
                             <ImageCard />
                             <ImageCard />
@@ -78,6 +76,7 @@ export default function Gallery() {
                             <ImageCard />
                             <ImageCard />
                         </AppCarousel>
+
                     </div>
                 </BottomContentHolder>
             </motion.div >
@@ -89,11 +88,8 @@ export default function Gallery() {
             <>
                 <HeaderContent subtitle="Pictures from the field" y={-80} />
                 <BottomContentHolder y={-120}>
-                    <Link to="/gallery" style={{ textDecoration: 'none' }}>
-                        <p className="backButton" color="blue">{"< Go Back"}</p>
-                    </Link>
+                    <p onClick={() => window.history.back()} className="backButton" style={{ marginTop: -100 }}>{"< Go Back"}</p>
                     <div className="seeAll_container">
-                        <ImageCard />
                         <ImageCard />
                         <ImageCard />
                         <ImageCard />
@@ -108,14 +104,15 @@ export default function Gallery() {
                         <ImageCard />
                         {/* <button onClick={() => scrollToTop()}>test</button> */}
                     </div>
+                    {/* <ImageCard /> */}
                 </BottomContentHolder>
             </>
         )
     }
     return (
         <>
-            <Route exact path='/gallery/preview/:id' component={FullImage} />
             <Route exact path='/gallery/:category' component={SeeAll} />
+            <Route exact path='/gallery/preview/:id' component={FullImage} />
             <Route exact path='/gallery' component={MainGallery} />
         </>
     )

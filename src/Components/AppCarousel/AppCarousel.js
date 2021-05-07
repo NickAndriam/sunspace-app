@@ -1,42 +1,28 @@
 import React from 'react'
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import Carousel, { consts } from 'react-elastic-carousel'
+import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri'
 
 import './appCarousel.scss'
-function AppCarousel({ children }) {
-    const responsive = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5,
-            slidesToSlide: 3
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3,
-            slidesToSlide: 2
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2,
-            slidesToSlide: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1,
-            slidesToSlide: 1
-        }
-    };
+function AppCarousel({ children, autoPlay, arrowColor = "rgba(0, 0, 0, 0.406)", arrowSize = 50 }) {
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+        { width: 768, itemsToShow: 3 },
+        // { width: 1024, itemsToShow: 3 },
+        { width: 1200, itemsToShow: 3 }
+    ];
+
+    const myArrow = ({ type, onClick, isEdge }) => {
+        const pointer = type === consts.PREV ? <RiArrowLeftSLine size={arrowSize} color={arrowColor} /> : <RiArrowRightSLine size={arrowSize} color={arrowColor} />
+        return (
+            <button className="appCarousel_arrow" onClick={onClick} disabled={isEdge}>
+                { pointer}
+            </button>
+
+        )
+    }
     return (
-        <Carousel
-            draggable={true}
-            responsive={responsive}
-            // infinite={true}
-            // centerMode={true}
-            containerClass="carousel-container"
-            itemClass="item_class_c"
-            sliderClass="slider_class_c"
-            ssr={true}>
+        <Carousel enableAutoPlay={autoPlay || false} itemsToShow={3} breakPoints={breakPoints} pagination={false} renderArrow={({ type, onClick, isEdge }) => myArrow({ type, onClick, isEdge })} className="appCarousel">
             {children}
         </Carousel>
     )

@@ -25,7 +25,7 @@ function Navigation(props, { color = "#4BB18F" }) {
     const path = "M0,0H1921.006V128.971s-481.619,29.285-961.87,29.285S0,128.971,0,128.971Z"
 
     const colors = [
-        'transparent', '#4BB18F', '#217AA5', '#979B03'
+        'rgba(0,0,0,0)', '#4BB18F', '#217AA5', '#979B03'
     ]
     const positionVal = [
         { p: 0, color: 'transparent' },

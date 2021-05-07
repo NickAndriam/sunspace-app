@@ -21,7 +21,7 @@ export default function MobileNav() {
         { name: "News", to: '/news', id: 3, active: news },
     ]
 
-    const bgColor = ["transparent", "#4bb18f", "#217aa5", "#979b03"]
+    const bgColor = ['rgba(0,0,0,0)', "#4bb18f", "#217aa5", "#979b03"]
 
     const navIconVariants = {
         initial: {

@@ -59,6 +59,7 @@ Vivamus suscipit tortor eget felis porttitor volutpat.</p>
                     <HeaderContent y={0} title="Greenhouse save lives" subtitle="Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.Quisque velit nisi, pretium ut lacinia in, elementum id enim." />
                     <BottomContentHolder>
                         <div className="newsCardDetail_container">
+                            <p onClick={() => window.history.back()} className="backButton" style={{ color: "#979B04", marginTop: -60 }}> {"< Go Back"}</p>
                             <div style={{ display: 'flex', flexDirection: 'column' }}>
                                 <div style={{ background: `url(${greenhouse})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} className="news_thumbnail" />
                                 <p style={{ color: '#A0A0A0', fontSize: 12, textAlign: 'center', width: 380 }}>Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id blandit vivamus magna justo.</p>

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { withBreakpoints } from 'react-breakpoints'
 import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
-import { motion } from 'framer-motion'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 
@@ -35,9 +34,9 @@ function App() {
                 <Route path='/gallery' component={Gallery} />
                 <Route path='/admin' component={SignIn} />
                 <Route exact path='/' component={Home} />
-                <Route path="*">
+                {/* <Route path="*">
                   <p>Not found</p>
-                </Route>
+                </Route> */}
               </Switch>
             </AnimatePresence>
           )}

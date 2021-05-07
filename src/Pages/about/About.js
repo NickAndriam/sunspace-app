@@ -8,6 +8,7 @@ import './about.scss'
 import BottomContentHolder from '../../Components/BottomContentHolder/BottomContentHolder'
 import HeaderContent from '../../Components/HeaderContent/HeaderContent'
 import MapPort from '../../Components/Map/Map'
+import AppCarousel from '../../Components/AppCarousel/AppCarousel'
 
 
 function About({ breakpoints, currentBreakpoint }) {
@@ -15,6 +16,12 @@ function About({ breakpoints, currentBreakpoint }) {
     const [showMap, setShowMap] = useState(false)
     const cb = breakpoints[currentBreakpoint];
 
+    const headerList = { title: 'Get to Know Us', subtitle: 'Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.Quisque velit nisi, pretium ut lacinia in, elementum id enim.' }
+    const aboutCardList = [
+        { id: 1, title: 'Who We Are', desc: 'Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta.Donec rutrum congue leo eget malesuada.Sed porttitor lectus nibh.Donec sollicitudin molestie malesuada.Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.Cras ultricies ligula sed magna dictum porta.Donec rutrum congue leo eget malesuada.Sed porttitor lectus nibh.Donec sollicitudin molestie malesuada.' },
+        { id: 2, title: 'Our Vision', desc: 'Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta.Donec rutrum congue leo eget malesuada.Sed porttitor lectus nibh.Donec sollicitudin molestie malesuada.Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.Cras ultricies ligula sed magna dictum porta.Donec rutrum congue leo eget malesuada.Sed porttitor lectus nibh.Donec sollicitudin molestie malesuada.' },
+        { id: 3, title: 'Our Mission', desc: 'Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta.Donec rutrum congue leo eget malesuada.Sed porttitor lectus nibh.Donec sollicitudin molestie malesuada.Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.Cras ultricies ligula sed magna dictum porta.Donec rutrum congue leo eget malesuada.Sed porttitor lectus nibh.Donec sollicitudin molestie malesuada.' }
+    ]
     useEffect(() => {
         const scrollToTop = () => {
             window.scrollTo({
@@ -23,27 +30,15 @@ function About({ breakpoints, currentBreakpoint }) {
             })
         }
         scrollToTop()
-    }, [1])
+    }, [])
 
 
-    const AboutCard = () => {
+    const AboutCard = ({ title, desc }) => {
         return (
             <motion.div
-
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: [5, 0], opacity: 1, transition: { duration: 1 } }}
-                initial={{ y: [0, 5], opacity: 0 }}
                 className="aboutCard_container">
-                <h3 style={{ textAlign: 'center' }}>Who We Are</h3>
-                <p className="aboutCard_p" >Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
-                Cras ultricies ligula sed magna dictum porta.
-                Donec rutrum congue leo eget malesuada.
-                Sed porttitor lectus nibh.
-                Donec sollicitudin molestie malesuada.Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
-                Cras ultricies ligula sed magna dictum porta.
-                Donec rutrum congue leo eget malesuada.
-                Sed porttitor lectus nibh.
-Donec sollicitudin molestie malesuada.</p>
+                <h3 >{title}</h3>
+                <p className="aboutCard_p">{desc}</p>
             </motion.div>
         )
     }
@@ -63,7 +58,6 @@ Donec sollicitudin molestie malesuada.</p>
     return (
         <motion.div
             initial={{ opacity: 1 }}
-            // animate={ready ? { overflowY: 'hidden' } : { overflowY: '' }}
             exit={{ opacity: 1 }}
             onAnimationComplete={() => setReady(false)}
             transition={{ duration: 0.3 }}
@@ -76,13 +70,15 @@ Donec sollicitudin molestie malesuada.</p>
                 className="about_button">
                 {/* <p className="about_boutton_txt">About Us</p> */}
             </motion.div>
-            <HeaderContent y={0} title="Get to Know Us" subtitle="Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.Quisque velit nisi, pretium ut lacinia in, elementum id enim." />
-            <BottomContentHolder y={cb <= 400 ? -40 : 0}>
-                <div className="aboutCardHolder">
-                    <AboutCard />
-                    <AboutCard />
-                    <AboutCard />
-                </div>
+            <HeaderContent y={0} title={headerList.title} subtitle={headerList.subtitle} />
+
+            <BottomContentHolder y={cb <= 400 ? 0 : -40}>
+                <AppCarousel arrowColor="#4bb18f37">
+                    {aboutCardList.map(card => (
+                        <AboutCard title={card.title} desc={card.desc} key={card.id} />
+                    ))}
+                </AppCarousel>
+
                 <div className="contactUs_map_container">
                     <ContactUs />
                     {showMap &&
