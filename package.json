@@ -12,7 +12,6 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "d3": "^6.6.2",
-    "default-passive-events": "^2.0.0",
     "flubber": "^0.4.2",
     "framer": "^1.2.29",
     "framer-motion": "^4.0.3",
