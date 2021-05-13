@@ -60,6 +60,17 @@
   height: 200px;
   padding: 40px;
 }
+
+.gallery_addImages {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  height: 150px;
+  margin-bottom: 2%;
+}
 .no_category_chosen {
   color: rgba(0, 0, 0, 0.605);
 }

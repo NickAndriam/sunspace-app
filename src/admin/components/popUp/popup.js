@@ -4,7 +4,7 @@ import './popup.scss'
 import { motion } from 'framer-motion'
 import AppButton from '../appButton/appButton'
 import { useLocation } from 'react-router'
-const PopUp = ({ children, show = false, onSave, onCancel }) => {
+const PopUp = ({ children, show = false, onSave, onCancel, y = 0 }) => {
     const location = useLocation()
     const url = location.pathname.split('/')
     const pathname = url[2]
@@ -15,7 +15,7 @@ const PopUp = ({ children, show = false, onSave, onCancel }) => {
                 <div className="appCardPopUp_container">
                     <motion.div className="appCardPopUp"
                         initial={{ scale: 0 }}
-                        animate={{ scale: 1, transition: { type: 'spring', stiffness: 120, duration: 0.5, mass: 0.3, bounce: 0.2 } }}
+                        animate={{ scale: 1, y, transition: { type: 'spring', stiffness: 120, duration: 0.5, mass: 0.3, bounce: 0.2 } }}
                         exit={{ scale: 0 }}>
                         {children}
                         <div style={{ display: 'flex', width: '95%', justifyContent: 'flex-end' }}>

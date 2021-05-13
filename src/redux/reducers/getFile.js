@@ -3,6 +3,8 @@ const initialState = {
     file: '',
     to: '',
     content: '',
+    files: [],
+    uploadFilesTo: ''
 }
 
 const getFile = (state = initialState, action = setFile) => {
@@ -13,6 +15,10 @@ const getFile = (state = initialState, action = setFile) => {
             return { ...state, content: action.content, to: action.to };
         case 'resetForm':
             return { ...state, content: action.content, to: action.to };
+        case 'setMultipleFiles':
+            return { ...state, files: action.files, uploadFilesTo: action.uploadFilesTo };
+        case 'setPathToUpload':
+            return { ...state, files: action.files, uploadFilesTo: action.uploadFilesTo };
         default:
             return { ...state }
     }

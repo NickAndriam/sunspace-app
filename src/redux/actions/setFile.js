@@ -1,15 +1,21 @@
-const setFile = (file, to, content) => {
+const setFile = (file, uploadFilesTo, content, files, to) => {
     return {
         type: 'setFile',
         file: file,
     }, {
         type: 'setSingleForm',
-        content: content,
-        to: to
+        content,
+        to
     }, {
         type: 'resetForms',
         content: '',
         to: null
+    }, {
+        type: 'setMultipleFiles',
+        files,
+    }, {
+        type: 'setPathToUpload',
+        uploadFilesTo
     }
 }
 export default setFile
