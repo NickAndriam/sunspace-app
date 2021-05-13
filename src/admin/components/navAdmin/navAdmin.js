@@ -46,7 +46,7 @@ const NavAdmin = () => {
                         <p className="navAdmin_text">News</p>}
                 </Link>
 
-                <div style={{ position: 'absolute', bottom: '7%', display: 'flex' }}>
+                <div style={{ position: 'absolute', bottom: '8%', display: 'flex' }}>
                     <AppButton link={true} to={pathname === 'home' ? '/' : `/${pathname}`} title="View Site" bg="#3b9779" padding="0px 15px 0px 15px" icon={<FaEye color="white" />} />
                     <AppButton link={true} to='/admin' title="Log Out" bg="#FF666C" padding="0px 5px 0px 5px" />
                 </div>

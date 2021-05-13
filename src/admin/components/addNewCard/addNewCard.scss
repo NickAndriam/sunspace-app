@@ -15,14 +15,41 @@
 
 .addNewCard_container:hover {
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.153) 0 0 10px;
+  box-shadow: rgba(150, 150, 150, 0.098) 0 0 40px inset;
 }
 .addNewCard_container:active {
   transform: scale(0.9);
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.153) 0 0 10px;
+  box-shadow: rgba(120, 120, 120, 0.153) 0 0 10px;
 }
 
 .plus_icon {
   stroke-dasharray: 0px;
+}
+
+.addnew_input {
+  width: 90%;
+  padding: 15px;
+  outline: none;
+  border-radius: 10px;
+  border: solid 1.5px;
+  border-color: #4bb18f;
+  // border-color: #50dfaf33;
+  color: rgba(0, 0, 0, 0.625);
+  font-family: m-el;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.addnew_input::placeholder {
+  color: rgba(0, 0, 0, 0.201);
+  font-family: m-el;
+}
+
+.addNewCard_image {
+  width: 140px;
+  height: 120px;
+  background-color: black;
+  margin-left: 10px;
+  border-radius: 20px;
 }

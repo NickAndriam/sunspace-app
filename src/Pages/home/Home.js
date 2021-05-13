@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { withBreakpoints } from 'react-breakpoints'
-import Carousel from 'react-material-ui-carousel'
 import { motion } from 'framer-motion'
+import axios, { API_URL } from '../../http-common'
 
 import './home.scss'
 
@@ -14,16 +14,42 @@ import AppCarousel from '../../Components/AppCarousel/AppCarousel'
 
 function Home({ breakpoints, currentBreakpoint }) {
     const cb = breakpoints[currentBreakpoint]
+    const [data, setData] = useState([
+        { id: 1, motto: '', partner_name: "", url: '', size: 0 },
+    ])
+
+    const [sponsorsList, setSponsorList] = useState([])
+
+    const getLogo = async () => {
+        await axios.get('/home/partnersList').then(res => {
+            if (res.status === 200) {
+                setSponsorList(res.data)
+                console.log(res.data)
+            }
+        })
+    }
+
+    const getData = async () => {
+        try {
+            await axios.get('/home').then(res => {
+                console.log(res.data)
+                if (res.status === 200) {
+                    setData(res.data)
+                }
+            })
+        } catch (e) {
+            console.log(e)
+        }
+    };
+    useEffect(() => {
+        getData()
+        getLogo()
+    }, [])
+
+
 
 
     const Sponsors = () => {
-        const sponsorList = [
-            { name: 'Innergy', url: innergy, id: 0, size: 90 },
-            { name: 'Erasmus', url: erasmus, id: 1, size: 60 },
-            { name: 'IV', url: iv, id: 2, size: 70 },
-            { name: 'CMU', url: cmu, id: 3, size: 70 }
-        ]
-
         return (
             <>
                 <motion.div className="sponsors_box" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -31,21 +57,20 @@ function Home({ breakpoints, currentBreakpoint }) {
                         cb > breakpoints.mobileLandscape ?
                             <div className="sponsors_container">
                                 {
-                                    sponsorList.map(e => (
-                                        <img src={e.url} alt={e.name} id={e.id} height={e.size} key={e.id} />
+                                    sponsorsList.map(sponsor => (
+                                        <img src={`${API_URL}/${sponsor.url}`} alt={sponsor.id} height={68} key={sponsor.id} />
                                     ))
                                 }
                             </div> :
                             <div className="sponsors_container">
-                                {/* <Carousel navButtonsAlwaysInvisible="true" animation="slide" swipe={true} className="sponsors_carousel"> */}
                                 <AppCarousel autoPlay={true}>
                                     {
-                                        sponsorList.map(e => (
-                                            <img src={e.url} alt={e.name} id={e.id} height={e.size} key={e.id} />
+                                        sponsorsList.map(sponsor => (
+                                            <img src={`${API_URL}/media/logo/${sponsor.url}`} alt={sponsor.id} height={sponsor.size} key={sponsor.id} />
                                         ))
                                     }
                                 </AppCarousel>
-                                {/* </Carousel> */}
+
                             </div>
                     }
                 </motion.div>
@@ -70,15 +95,16 @@ function Home({ breakpoints, currentBreakpoint }) {
             </>
         )
     }
-
     return (
         <motion.div
             className="home_main_container"
+        // style={{backgroundImage: `url(${})`}}
+        // exit={{ opacity: 0, transition: { duration: 0.4, mass: 0.2 } }}
         >
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: { duration: 0.8 } }}
-                exit={{ opacity: 0, transition: { duration: 0.6 } }}
+                // exit={{ opacity: 0, transition: { duration: 0.6 } }}
 
                 className="bg-image" />
             <div className="layer" />
@@ -102,8 +128,8 @@ function Home({ breakpoints, currentBreakpoint }) {
             {/* motto and watch */}
             <div className="home_motto_watch_container">
                 <div className="home_motto">
-                    <p style={{ lineHeight: 2.5 }}><span className="quote">“</span>Curabitur aliquet quam id dui posuere blandit.
-                    Lorem ipsum dolor sit amet, consectetur adip.<span className="quote">”</span> </p>
+
+                    <motion.p style={{ lineHeight: 2.5 }}><span className="quote">“</span>{data[0].motto}<span className="quote">”</span> </motion.p>
                 </div>
                 <Watch />
             </div>

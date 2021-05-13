@@ -9,47 +9,14 @@
   margin: 5px 5px 30px 20px;
   padding: 20px 10px 20px 10px;
   border-radius: 20px;
+  width: 140px;
   box-shadow: rgba(0, 0, 0, 0.077) 0 4px 5px;
+  transform: scale(1);
+  transition: transform ease-in-out 100ms;
 }
 .appCard_container:hover {
   transform: scale(1.05);
   transition: transform ease-in-out 100ms;
-}
-.appCardPopUp_container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.913);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-.appCardPopUp {
-  width: 50%;
-  // height: 40%;
-  background-color: white;
-  border-radius: 25px;
-  padding: 0px 40px 10px 40px;
-}
-
-.addnew_input {
-  width: 90%;
-  padding: 20px;
-  outline: none;
-  border-radius: 10px;
-  border: solid 1.5px;
-  border-color: #4bb18f;
-  color: rgba(0, 0, 0, 0.625);
-  font-family: m-el;
-  font-size: 16px;
-}
-
-.addnew_input::placeholder {
-  color: rgba(0, 0, 0, 0.201);
-  font-family: m-el;
 }
 
 .deleteCard_icon {
@@ -64,6 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 .deleteCard_icon:hover {

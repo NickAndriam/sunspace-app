@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 import { motion } from 'framer-motion'
+import { VscLoading } from 'react-icons/vsc'
 
 import NavAdmin from '../navAdmin/navAdmin'
 import './contentHolder.scss'
@@ -11,6 +12,7 @@ const ContentHolder = ({ children }) => {
     const pathname = url[2]
 
     let [isVisible, setVisibility] = useState(false)
+    let [loading, setLoaing] = useState(false)
 
     useEffect(() => {
         const onSwitch = async () => {
@@ -26,6 +28,10 @@ const ContentHolder = ({ children }) => {
         };
         onSwitch()
     }, [pathname])
+
+    useEffect(() => {
+        setTimeout(() => { setLoaing(true) }, 600)
+    }, [pathname])
     return (
         <>
             <motion.div className="contentHolder_container"
@@ -36,7 +42,16 @@ const ContentHolder = ({ children }) => {
                 <div className="contentHolder_sides">
                     <NavAdmin />
                     <div className="content_content">
-                        {children}
+                        {loading ?
+                            <>{children}</> :
+                            <motion.div className="loading_screen_container"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.4 }}
+                                exit={{ opacity: 0 }}>
+                                <VscLoading size={100} color="#4BB18F" className="loading_screen" />
+                            </motion.div>
+                        }
                     </div>
                 </div>
 

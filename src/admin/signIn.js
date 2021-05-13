@@ -1,5 +1,6 @@
 import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useDispatch } from 'react-redux'
 
 import './signIn.scss'
 
@@ -13,7 +14,7 @@ import Home from './pages/home'
 import ContentHolder from './components/contentHolder/contentHolder'
 
 const SignIn = () => {
-
+    const dispatch = useDispatch()
     const SignInMain = () => {
         return (
             <>
@@ -37,10 +38,12 @@ const SignIn = () => {
                     animate={{ x: 0, transition: { duration: 1, mass: 1, delay: 0.3, staggerChildren: 0.2 } }}
                     exit={{ x: '100%', transition: { duration: 1, mass: 0.1 } }}>
                     <img src={`${logo}`} className="signin_logo" />
-                    <AppInput type="email" placeholder="Username" />
-                    <AppInput type="password" placeholder="Password" />
+                    <form >
+                        <AppInput type="email" placeholder="Username" />
+                        <AppInput type="password" placeholder="Password" />
+                    </form>
                     <Link to='/admin/home' style={{ textDecoration: 'none' }}>
-                        <AppButton title="Sign In" width={250} />
+                        <AppButton title="Sign In" width={250} bold onClick={() => dispatch({ type: 'success', msg: 'Signed In' })} />
                     </Link>
                 </motion.div>
             </>

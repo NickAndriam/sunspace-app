@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, useLocation } from 'react-router'
+import { Route } from 'react-router'
 import ContentHolder from './components/contentHolder/contentHolder'
 import Home from './pages/home'
 import News from './pages/news'
@@ -8,10 +8,6 @@ import About from './pages/about'
 
 
 const AppAdmin = () => {
-    const location = useLocation()
-    const url = location.pathname.split('/')
-    const pathname = url[2]
-    console.log(pathname)
     return (
         <>
 

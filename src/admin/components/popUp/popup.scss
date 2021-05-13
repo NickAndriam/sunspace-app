@@ -1,0 +1,19 @@
+.appCardPopUp_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.913);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.appCardPopUp {
+  width: 50%;
+  // height: 40%;
+  background-color: white;
+  border-radius: 25px;
+  padding: 0px 40px 10px 40px;
+}

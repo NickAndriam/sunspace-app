@@ -8,8 +8,8 @@ function AppCarousel({ children, autoPlay, arrowColor = "rgba(0, 0, 0, 0.406)", 
         { width: 1, itemsToShow: 1 },
         { width: 550, itemsToShow: 2, itemsToScroll: 2 },
         { width: 768, itemsToShow: 3 },
-        // { width: 1024, itemsToShow: 3 },
-        { width: 1200, itemsToShow: 3 }
+        { width: 1200, itemsToShow: 3 },
+        { width: 1600, itemsToShow: 4 }
     ];
 
     const myArrow = ({ type, onClick, isEdge }) => {

@@ -2,11 +2,11 @@ import React from 'react'
 import './heading.scss'
 
 
-const Heading = ({ title, lineWidth }) => {
+const Heading = ({ title, lineWidth, textWidth }) => {
 
     return (
         <div className="heading_container">
-            <p className="heading_text">{title || 'Header'}</p>
+            <p className="heading_text" style={{ width: textWidth }}>{title || 'Header'}</p>
             <div className="heading_line" style={{ width: lineWidth }} />
         </div>
     )

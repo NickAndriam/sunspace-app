@@ -1,4 +1,5 @@
 import React from 'react'
+import { } from 'react-icons'
 
 import './footer.scss'
 export default function Footer({ data }) {

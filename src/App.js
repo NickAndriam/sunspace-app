@@ -17,17 +17,17 @@ import Gallery from './Pages/gallery/Gallery'
 import About from './Pages/about/About'
 import News from './Pages/news/News'
 import SignIn from './admin/signIn'
+import Notification from './admin/components/notification/notification'
 
 function App() {
-
-  const { home } = useSelector(state => state.navigation)
   return (
     <>
       <Router>
         <Navigation />
+        <Notification />
         <Route
           render={({ location }) => (
-            <AnimatePresence initial={false}>
+            <AnimatePresence initial={true}>
               <Switch location={location} key={location.pathname} >
                 <Route path='/about' component={About} />
                 <Route path='/news' component={News} />
@@ -43,7 +43,7 @@ function App() {
         />
         <Header />
         <BottomSVG />
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </>
   );

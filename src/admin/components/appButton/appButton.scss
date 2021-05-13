@@ -1,3 +1,4 @@
+@import "../../../variables/variable";
 .admin_appButton_container {
   background-color: #4bb18f;
   border-radius: 40px;
@@ -5,6 +6,7 @@
   justify-content: center;
   align-items: center;
   margin: 2px;
+  overflow: hidden;
 }
 
 .admin_appButton_container:hover {
@@ -14,4 +16,34 @@
 .admin_appButton_container:active {
   background-color: #3b9779;
   transform: scale(0.95);
+}
+
+.admin_appButton_style {
+  border: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 12px 10px 12px 10px;
+  color: white;
+  font-family: m-el;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin_appButton_style:hover {
+  cursor: pointer;
+}
+.admin_appButton_style_bold:hover {
+  cursor: pointer;
+}
+
+.admin_appButton_style_bold {
+  border: 0px;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 12px 10px 12px 10px;
+  color: white;
+  font-family: $bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
 }

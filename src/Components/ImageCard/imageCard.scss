@@ -1,14 +1,17 @@
 .imageCard_container {
-  margin: 5px;
-  width: 280px;
-  height: 200px;
-  border-radius: 25px;
+  margin: 10px;
+  width: 200px;
+  height: 140px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.153) 0px 5px 5px;
+  box-shadow: rgba(0, 0, 0, 0.153) 0px 2px 10px;
   @media (max-width: 1024px) {
     width: 220px;
     height: 140px;
   }
+}
+.imageCard_container:hover {
+  cursor: pointer;
 }
 
 .imgCard {

@@ -110,7 +110,6 @@
 .home_motto {
   width: 500px;
   color: rgb(255, 255, 255);
-  z-index: 200;
   font-size: 18px;
   @media (max-width: 480px) {
     width: 380px;
@@ -227,4 +226,20 @@
     height: 60%;
     background-color: white;
   }
+}
+
+.restore_icon {
+  background-color: #ff676c;
+  border-radius: 100px;
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  transform: rotate(0deg);
+  transition: transform ease-in-out 0.3s;
+}
+
+.restore_icon:hover {
+  cursor: pointer;
+  transform: rotate(360deg);
+  transition: transform ease-in-out 0.3s;
 }
