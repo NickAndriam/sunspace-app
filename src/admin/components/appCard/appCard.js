@@ -14,10 +14,9 @@ const AppCard = (
         buttonWidth = 100,
         cardWidth = 150,
         title = "Title",
-        desc = "...",
+        desc = "",
         btnTitle, padding,
         margin,
-        opacity,
         customize = false,
         withDelete,
         onDelete,
@@ -28,8 +27,14 @@ const AppCard = (
         tableName = '',
         withMultipleContent = false,
         data = [],
+        singleData = '',
         cardId = 1,
-        onDataUpdate
+        onDataUpdate,
+        withPopUp = false,
+        withBtn = true,
+        onClick,
+        noSubtitle
+
     }) => {
 
     let [isVisible, setVisibility] = useState(false)
@@ -91,6 +96,7 @@ const AppCard = (
                             initial={{ padding, margin }}
                             animate={{ width: cardWidth, opacity: deleted ? 0 : 1, padding, margin, transition: { duration: 0.2 } }}
                             style={{ margin }} >
+                            {/* {withBtn && <AppButton title={btnTitle || "Edit"} padding="px 0px 0px 0px" width={buttonWidth} onClick={onOpeningCard} />} */}
                             {showIcon && (withDelete ? <motion.p className="deleteCard_icon"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1, transition: { duration: 0.4 } }}
@@ -109,8 +115,8 @@ const AppCard = (
                             onClick={() => setShowIcon(!showIcon)}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1, width: cardWidth, transition: { duration: 0.4, mass: 1, stiffness: 100 } }} >
-                            <p style={{ color: '#848383', fontSize: 16, pointerEvents: 'inherit' }}>{title}</p>
-                            <AppButton title={btnTitle || "Edit"} padding="px 0px 0px 0px" width={buttonWidth} onClick={onOpeningCard} />
+                            <p style={{ color: '#848383', fontSize: 16, pointerEvents: 'inherit', textAlign: 'center' }}>{title}</p>
+                            {withBtn ? <AppButton title={btnTitle || "Edit"} padding="px 0px 0px 0px" width={buttonWidth} onClick={onOpeningCard} /> : ''}
                             {showIcon && <motion.p className="deleteCard_icon"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1, transition: { duration: 0.4 } }}
@@ -119,12 +125,15 @@ const AppCard = (
                             >x</motion.p>}
                         </motion.div>
 
-                        <PopUp show={isVisible} onSave={onSave} onCancel={() => setVisibility(false)}>
-                            <h4>New {inputTitle}:</h4>
-                            <p style={{ color: "rgba(0, 0, 0, 0.446)", fontSize: 14 }}>{withMultipleContent ? desc : singleValue}</p><br />
-                            {children}
-                            <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginTop: 20 }}>
-                            </div>
+                        <PopUp onClick={onClick} show={isVisible} onSave={onSave} onCancel={() => setVisibility(false)}>
+                            {customize ? '' :
+                                <>
+                                    <h4>{title}:</h4>
+                                    {noSubtitle ? '' : <><p style={{ color: "rgba(0, 0, 0, 0.446)", fontSize: 14 }}>{withMultipleContent ? desc : singleValue}</p><br /></>}
+                                    {children}
+                                    <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginTop: 20 }}>
+                                    </div>
+                                </>}
                         </PopUp>
                     </>
             }

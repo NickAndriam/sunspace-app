@@ -37,6 +37,16 @@
   align-items: center;
 }
 
+.loading_screen_container_sm {
+  width: 100px;
+  height: 120px;
+  display: flex;
+  margin-top: -30px;
+  margin-left: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes rotating {
   from {
     -ms-transform: rotate(0deg);

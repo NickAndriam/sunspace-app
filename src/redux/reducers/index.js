@@ -8,6 +8,9 @@ import navigation from './navigation'
 import getFile from './getFile'
 import getNotification from './getNotification'
 import getCategory from './getCategory'
+import getRefresh from './getRefresh'
+import getNews from './getNews'
+import getterForIDs from './getterForIDs'
 
 
 
@@ -18,7 +21,10 @@ const rootReducer = combineReducers({
     navigation,
     getFile,
     getNotification,
-    getCategory
+    getCategory,
+    getRefresh,
+    getNews,
+    getterForIDs
 })
 
 export default rootReducer;

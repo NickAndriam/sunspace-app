@@ -14,12 +14,13 @@ import PopUp from '../components/popUp/popup';
 
 const Gallery = () => {
     const dispatch = useDispatch()
-    const [refresh, setRefresh] = useState(1)
+    const [refreshing, setRefreshing] = useState(1)
     const [display, setDisplay] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
     const [popUpOpen, setPopUp] = useState(false)
     const [uploadFilesTo, setUploadFilesTo] = useState('')
     const { categoryList, currentCategory, to, data } = useSelector(state => state.getCategory)
+    const { refresh } = useSelector(state => state.getRefresh)
 
     const { files } = useSelector(state => state.getFile)
 
@@ -27,17 +28,17 @@ const Gallery = () => {
     const getCategoryList = async () => {
         try {
             const res = await axios.get(`gallery/category`)
-            console.log('Getting and setting category list: ')
+            // console.log('Getting and setting category list: ')
             dispatch({ type: 'setCategoryList', categoryList: res.data })
         } catch (err) {
-            console.log(err)
+            // console.log(err)
         }
     }
 
     const getImagesOfCategory = async (category) => {
         try {
             const res = await axios.get(`gallery/category/${category}`,)
-            console.log('Getting and setting category images:')
+            // console.log('Getting and setting category images:')
             dispatch({ type: 'setCategoryData', data: res.data })
             // console.log('Dispatch data complete!', data)
         } catch (err) {
@@ -47,14 +48,15 @@ const Gallery = () => {
 
     const onSelectionChange = async (value) => {
         setDisplay(false)
-        console.log('Getting Current category', value.value)
+        // console.log('Getting Current category', value.value)
         getImagesOfCategory(value.value)
         dispatch({ type: 'setCurrentCategory', currentCategory: value.value })
         dispatch({ type: 'setCategoryPath', path: value.path })
         // dispatch({ type: 'setPathToUpload', uploadFilesTo: `media/gallery/${value.value}` })
         setUploadFilesTo(value.value)
-        console.log('Setting up current category')
-        setRefresh(refresh + 1)
+        // console.log('Setting up current category')
+        // setRefresh(refresh + 1)
+        dispatch({ type: 'refresh' })
         setTimeout(() => setDisplay(true), 200)
 
     }
@@ -77,20 +79,22 @@ const Gallery = () => {
             setPopUp(false)
             getCategoryList()
             getImagesOfCategory(currentCategory)
-            setRefresh(refresh + 1)
+            // setRefresh(refresh + 1)
+            dispatch({ type: 'refresh' })
+
         } catch (err) {
             console.log(err)
         }
     }
     const onDrop = useCallback(acceptedFiles => {
-        console.log(acceptedFiles)
+        // console.log(acceptedFiles)
         const fulltype = acceptedFiles[0].type
         const typeSplit = fulltype.split('/')
-        console.log(typeSplit[0])
+        // console.log(typeSplit[0])
         if (typeSplit[0] === "video" || typeSplit[0] === "image") {
             dispatch({ type: "setMultipleFiles", files: acceptedFiles })
             setPopUp(true)
-            console.log('accepted')
+            // console.log('accepted')
         } else {
             dispatch({ type: 'error', msg: 'Images or Videos Only' })
             console.log('denied')
@@ -103,9 +107,9 @@ const Gallery = () => {
         getCategoryList()
         getImagesOfCategory(currentCategory)
         setTimeout(() => setDisplay(true), 400)
-    }, [refresh])
+    }, [refreshing, refresh])
 
-    console.log(files, uploadFilesTo)
+    // console.log(files, uploadFilesTo)
     return (
         <div>
             <p style={{ color: 'rgba(0, 0, 0, 0.294)', fontSize: 20 }}>Filter</p>
@@ -130,13 +134,15 @@ const Gallery = () => {
                             },
                         })} />
                 </div>
-                <AddNewCategory getStatus={(e) => setIsOpen(e)} onRefresh={() => setRefresh(refresh + 1)} />
-                <EditCategories addNewCategoryBtn={isOpen} onRefresh={() => setRefresh(refresh + 1)} />
+                <AddNewCategory getStatus={(e) => setIsOpen(e)} onRefresh={() => setRefreshing(refreshing + 1)} />
+                <EditCategories addNewCategoryBtn={isOpen} onRefresh={() => setRefreshing(refreshing + 1)} />
             </div>
             <br />
             <br />
-            <PopUp show={popUpOpen} onCancel={() => setPopUp(false)} onSave={uploadMultipleImages} y='-90%'>
+            <PopUp show={popUpOpen} onCancel={() => setPopUp(false)} onSave={uploadMultipleImages} y='-15%'>
+                <br />
                 <GalleryImapeView local={true} display={display} data={files} />
+                <br />
             </PopUp>
             <motion.div className="gallery_addImages" {...getRootProps()}
                 initial={{ border: 'none', borderRadius: 20 }}

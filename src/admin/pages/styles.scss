@@ -81,6 +81,15 @@
   margin: 0px 10px 0px 10px;
 }
 
+.news_input::placeholder {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.news_input {
+  font-size: 12px;
+}
+
 .addNewCategorySave_save {
   width: 200px;
   height: 50px;
@@ -130,4 +139,17 @@
   display: "flex";
   align-items: center;
   justify-content: center;
+}
+
+.news_addMore {
+  color: rgba(0, 0, 0, 0.18);
+}
+
+.newsEditForm_container {
+  // display: flex;
+  width: 80%;
+  overflow-y: scroll;
+  margin-left: 5%;
+  margin-bottom: 100px;
+  margin-top: 10px;
 }

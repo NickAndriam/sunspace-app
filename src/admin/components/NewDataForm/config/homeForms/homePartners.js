@@ -44,7 +44,7 @@ const HomePartners = () => {
             setDeleted(true)
             getLogoList()
             setRefresh(refresh + 1)
-            console.log('Image deleted!')
+            // console.log('Image deleted!')
             dispatch({ type: 'success', msg: 'Image Deleted' })
         } catch (err) {
             console.log(err)
@@ -76,7 +76,7 @@ const HomePartners = () => {
     // SEND IMAGE -URL- TO DATABASE
     const addNewPartner = async (url) => {
         await axios.post('/home/addNewPartner', { url })
-        console.log("Submitted to DB ", url)
+        // console.log("Submitted to DB ", url)
     }
 
 
@@ -85,9 +85,9 @@ const HomePartners = () => {
 
     const onSumbitNewImage = () => {
         setVisibility(false)
-        console.log('Submition in process');
+        // console.log('Submition in process');
         uploadActions(file, 'media/addLogo');
-        console.log('Submition Complete!');
+        // console.log('Submition Complete!');
         dispatch({ type: 'success', msg: 'Saved' })
         setRefresh(refresh + 1)
 
@@ -101,8 +101,8 @@ const HomePartners = () => {
 
         setSponsorsList(newList)
         let idList = newList.map(list => list.id, 1)
-        console.log(newList)
-        console.log(idList)
+        // console.log(newList)
+        // console.log(idList)
     }
     const reorder = (list, startIndex, endIndex) => {
         const result = Array.from(list)

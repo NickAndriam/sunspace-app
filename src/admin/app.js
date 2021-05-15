@@ -15,7 +15,7 @@ const AppAdmin = () => {
             <Route exact path='/admin/home' component={Home} />
             <Route exact path='/admin/about' component={About} />
             <Route exact path='/admin/gallery' component={Gallery} />
-            <Route exact path='/admin/news' component={News} />
+            <Route path='/admin/news' component={News} />
             {/* </ContentHolder> */}
         </>
     )

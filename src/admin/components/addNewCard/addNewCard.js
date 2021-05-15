@@ -6,7 +6,7 @@ import { useDropzone } from 'react-dropzone'
 
 import './addNewCard.scss'
 
-const AddNewCard = ({ onOpen, children, width, height }) => {
+const AddNewCard = ({ onClick, onOpen, children, width, height, justABtn = false }) => {
 
     const dispatch = useDispatch()
 
@@ -25,16 +25,14 @@ const AddNewCard = ({ onOpen, children, width, height }) => {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
     return (
         <>
-            {<>
-                <div {...getRootProps()} className="addNewCard_container" onClick={onOpen} style={{ width, height }}>
-                    <FiPlus size={60} className="plus_icon" />
-                    <input {...getInputProps()} accept="video/*,image/*" id="add-image-gallery" name="images" />
-                    <p style={{ color: '#C6C5C5', fontSize: 14 }}>Add More</p>
-                </div>
-                <>
-                    {children}
-                </>
-            </>}
+            <div {...getRootProps()} className="addNewCard_container" onClick={onClick} style={{ width, height }}>
+                <FiPlus size={60} className="plus_icon" />
+                <input {...getInputProps()} accept="video/*,image/*" id="add-image-gallery" name="images" />
+                <p style={{ color: '#C6C5C5', fontSize: 14 }}>Add More</p>
+            </div>
+            <>
+                {/* {children} */}
+            </>
         </>
     )
 }
